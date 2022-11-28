@@ -1,7 +1,5 @@
 import java.sql.SQLException;
-
 public class Etudiant {
-
 		private int matricule;
 	    private String nom;
 	    private String prenom;
@@ -10,11 +8,10 @@ public class Etudiant {
 	    private int nbLivreMensuel_Autorise;
 	    private int nbLivreEmprunte;
 	    private int id_universite;
-
-
+	    
 	    
 		public Etudiant(int matricule, String nom, String prenom, String email,String pwd, int id_universite) {
-
+			
 			this.matricule = matricule;
 			this.nom = nom;
 			this.prenom = prenom;
@@ -75,18 +72,14 @@ public class Etudiant {
 		}
 
 		public void giveBonus(Universite univ) throws SQLException {
+			
 
-			if (univ.getPack() == TypePackage.Standard)
-		     {
-				this.nbLivreMensuel_Autorise += 5 ;
-		     }
-		     else if (univ.getPack() == TypePackage.Premium)
-		     {
-		    	 this.nbLivreMensuel_Autorise += 10 ;
-		     }                           
+			AbstractFactory AF = new ConcreteCreator();
+		    IPackage pack = AF.getPackage(univ.getPack());
+			setNbLivreMensuel_Autorise(this.getNbLivreMensuel_Autorise() + pack.getBonus()) ;
 
 		}
 
 
-
+		
 	    }
