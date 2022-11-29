@@ -1,3 +1,4 @@
+package Pack;
 public class Standard implements IPackage {
 
 	@Override

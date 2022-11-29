@@ -1,3 +1,5 @@
+
+package Pack;
 public class Premium implements IPackage {
 
 	@Override

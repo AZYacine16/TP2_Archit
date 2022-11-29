@@ -1,8 +1,18 @@
-//import java.sql.Connection;
-//import java.sql.DriverManager;
+package Services;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
-//import java.sql.Statement;
+import java.sql.Statement;
 import java.util.ArrayList;
+
+import Journal.IJournal;
+import Journal.ScreenJourn;
+import Pack.AbstractFactory;
+import Pack.ConcreteCreator;
+import Pack.IPackage;
+import Repository.IEtudiant;
+import Repository.IUniversite;
+
 public class EtudiantService {
 	
 		private IEtudiant StudRep;
@@ -25,7 +35,7 @@ public class EtudiantService {
 			return this.StudRep;
 		}
 		
-	boolean inscription (int matricule, String nom, String prenom, String email,String pwd, int id_universite) throws SQLException	
+	public boolean inscription (int matricule, String nom, String prenom, String email,String pwd, int id_universite) throws SQLException	
 	{
 		
 	    Etudiant stud = new Etudiant(matricule, nom, prenom, email,pwd,id_universite);

@@ -1,3 +1,5 @@
+package Journal;
+
 public class ScreenJourn implements IJournal{
 
 	@Override

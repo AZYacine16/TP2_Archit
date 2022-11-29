@@ -1,8 +1,16 @@
 import java.sql.*;
+import Journal.FileJourn;
+import Journal.MultiJourn;
+import Journal.ScreenDetailJourn;
+import Journal.ScreenJourn;
+import Repository.EtudiantRepository;
+import Repository.UniversiteRepository;
+import Services.EtudiantService;
+
 public class MainApp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        //Attention!!!!Il faut dï¿½marrer Wampserver pour que la connection marche
+        //Attention!!!!Il faut démarrer Wampserver pour que la connection marche
 		
 		EtudiantService serv=new EtudiantService();
 		serv.setEtudRep(new EtudiantRepository());
